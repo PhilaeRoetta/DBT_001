@@ -1,0 +1,11 @@
+models:
+  - name: stg_customer
+    columns:
+      - name: CUSTOMER_ID
+        tests:
+        - is_id_not_unique
+  - name: stg_item
+    columns:
+      - name: ITEM_ID
+        tests:
+        - is_id_not_unique

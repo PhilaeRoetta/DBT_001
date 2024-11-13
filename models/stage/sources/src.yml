@@ -1,0 +1,17 @@
+sources:
+  - name: DBT_INFO
+    database: DBT
+    schema: DBT_006
+    tables: 
+      - name: ALL_INFO
+        identifier : ORDERS
+        loaded_at_field: DOB
+        freshness: 
+          warn_after: {count: 1 , period: day}
+          error_after: {count: 2 , period: day}
+        columns:
+          - name: ORDER_ID
+            tests:
+              - is_id_not_unique
+      - name: ALL_INFO_BIS
+        identifier : ORDERS
