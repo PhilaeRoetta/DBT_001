@@ -8,5 +8,16 @@ with counting as (
 SELECT * FROM counting
 WHERE NB > 1
 
-{% endtest%}
+{% endtest %}
 
+{% test result_minus_expected(model,seed) %}
+
+    SELECT * FROM {{model}} MINUS SELECT * FROM {{seed}}
+
+{% endtest %}
+
+{% test expected_minus_result(model,seed) %}
+
+    SELECT * FROM {{seed}} MINUS SELECT * FROM {{model}}
+
+{% endtest %}

@@ -1,9 +1,13 @@
 models:
   - name: stg_customer
-    columns:
-      - name: CUSTOMER_ID
-        tests:
-        - is_id_not_unique
+    tests:
+      - not null
+      - result_minus_expected:
+          seed: ref('STG_CUSTOMER_CSV')
+      - expected_minus_result:
+          seed: ref('STG_CUSTOMER_CSV')
+    
+       
   - name: stg_item
     columns:
       - name: ITEM_ID
