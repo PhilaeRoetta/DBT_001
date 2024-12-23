@@ -1,7 +1,7 @@
 sources:
   - name: DBT_INFO
     database: DBT
-    schema: DBT_006
+    schema: DBT_001
     tables: 
       - name: ALL_INFO
         identifier : ORDERS

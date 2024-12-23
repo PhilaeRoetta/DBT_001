@@ -47,6 +47,10 @@ models:
           stg_customer:
             +required_tests: {"unique.*|not_null"}
             +materialized: table
+      time_spine:
+        +materialized: table
+
+
 
 seeds:
   DBT_001:
